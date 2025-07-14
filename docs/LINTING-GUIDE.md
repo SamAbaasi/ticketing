@@ -2,15 +2,15 @@
 
 This guide is for setting up a modern, scalable frontend development environment with:
 
-* **React** (library)
-* **Vite** (bundler)
-* **TypeScript** (type-safety)
-* **Sass** (CSS preprocessor)
-* **Prettier** (code formatter)
-* **ESLint** (linter)
-* **Husky + lint-staged** (pre-commit checks)
-* **Commitizen + Conventional Commits** (structured Git commits)
-* **Stylelint** (for SCSS/SASS linting)
+- **React** (library)
+- **Vite** (bundler)
+- **TypeScript** (type-safety)
+- **Sass** (CSS preprocessor)
+- **Prettier** (code formatter)
+- **ESLint** (linter)
+- **Husky + lint-staged** (pre-commit checks)
+- **Commitizen + Conventional Commits** (structured Git commits)
+- **Stylelint** (for SCSS/SASS linting)
 
 > Inspired by best practices from **Airbnb**, **Google**, and **Uber** engineering teams.
 
@@ -106,29 +106,29 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'prettier',
     'airbnb',
-    'airbnb-typescript'
+    'airbnb-typescript',
   ],
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'jsx-a11y'],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'warn',
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
-    'no-console': 'warn'
+    'no-console': 'warn',
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 }
 ```
 
@@ -149,10 +149,10 @@ module.exports = {
     'selector-class-pattern': [
       '^[a-z0-9\-]+$',
       {
-        message: 'Use kebab-case for class names.'
-      }
-    ]
-  }
+        message: 'Use kebab-case for class names.',
+      },
+    ],
+  },
 }
 ```
 
@@ -212,7 +212,7 @@ npx --no -- commitlint --edit "$1"
 module.exports = {
   '*.{ts,tsx}': ['eslint --fix', 'prettier --write'],
   '*.{scss,css}': ['stylelint --fix'],
-  '*.{js,ts,tsx,json,md}': ['prettier --write']
+  '*.{js,ts,tsx,json,md}': ['prettier --write'],
 }
 ```
 
@@ -238,7 +238,7 @@ npx commitizen init cz-conventional-changelog --save-dev --save-exact
 
 ```js
 module.exports = {
-  extends: ['@commitlint/config-conventional']
+  extends: ['@commitlint/config-conventional'],
 }
 ```
 
@@ -281,24 +281,24 @@ graph TD
 
 ### Airbnb
 
-* Prefer `const` over `let` when reassignment is not needed
-* Enforce destructuring
-* Avoid nested ternaries
-* Use trailing commas in multi-line objects
+- Prefer `const` over `let` when reassignment is not needed
+- Enforce destructuring
+- Avoid nested ternaries
+- Use trailing commas in multi-line objects
 
 ### Google
 
-* Use `PascalCase` for types and classes
-* Avoid using `any`, use `unknown` and narrow types
-* Prefer single quotes for strings
-* Prefer default exports only when one entity is being exported
+- Use `PascalCase` for types and classes
+- Avoid using `any`, use `unknown` and narrow types
+- Prefer single quotes for strings
+- Prefer default exports only when one entity is being exported
 
 ### Uber
 
-* Avoid type assertions (`as`) unless absolutely required
-* Use `readonly` for immutable objects
-* Prefer explicit return types
-* Treat warnings as errors in CI
+- Avoid type assertions (`as`) unless absolutely required
+- Use `readonly` for immutable objects
+- Prefer explicit return types
+- Treat warnings as errors in CI
 
 > These rules are enforced via ESLint plugins and extended configurations. You can extend Airbnb config via:
 

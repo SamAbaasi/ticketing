@@ -1,8 +1,8 @@
 Sure! Below is your fully rewritten `README.md` **specifically for GitLab**, replacing all GitHub references with GitLab equivalents:
 
-* ✅ GitLab CI/CD (`.gitlab-ci.yml`) instead of GitHub Actions
-* ✅ GitLab secrets (`CI/CD Variables`) instead of GitHub Secrets
-* ✅ Adjusted language, file structure, and recommendations for GitLab pipelines
+- ✅ GitLab CI/CD (`.gitlab-ci.yml`) instead of GitHub Actions
+- ✅ GitLab secrets (`CI/CD Variables`) instead of GitHub Secrets
+- ✅ Adjusted language, file structure, and recommendations for GitLab pipelines
 
 ---
 
@@ -14,13 +14,12 @@ This is a production-ready React + TypeScript + Vite application with full DevOp
 ---
 
 ## 📁 Project Structure
-
 ```
 
-/src               → App source code (TSX, SCSS, assets)
-/public            → Static assets
-/docker            → Dockerfile and .dockerignore
-.gitlab-ci.yml     → GitLab CI/CD pipeline
+/src → App source code (TSX, SCSS, assets)
+/public → Static assets
+/docker → Dockerfile and .dockerignore
+.gitlab-ci.yml → GitLab CI/CD pipeline
 
 ````
 
@@ -118,7 +117,7 @@ stages:
   - docker
 
 variables:
-  NODE_ENV: "production"
+  NODE_ENV: 'production'
 
 cache:
   paths:
@@ -224,11 +223,11 @@ Set these under:
 
 ## ✅ PR / MR Checklist
 
-* [x] Linting and formatting pass
-* [x] Unit tests and coverage pass
-* [x] `npm audit` shows no critical vulnerabilities
-* [x] Docker image builds successfully
-* [x] `.gitlab-ci.yml` pipeline passes
+- [x] Linting and formatting pass
+- [x] Unit tests and coverage pass
+- [x] `npm audit` shows no critical vulnerabilities
+- [x] Docker image builds successfully
+- [x] `.gitlab-ci.yml` pipeline passes
 
 ---
 
@@ -241,7 +240,6 @@ REACT_APP_API_URL=https://api.example.com
 Add `.env` to `.gitignore`.
 
 ---
-
 
 Excellent! Here's everything you requested, fully tailored for a **React + TypeScript + Vite** project deployed using Docker, with GitLab CI/CD and GitLab Pages support:
 
@@ -277,8 +275,8 @@ To deploy your **static Vite build** to **GitLab Pages**, you can use a separate
 
 ### Requirements:
 
-* Must use `public/` as the deploy folder for GitLab Pages
-* Copy `dist/` (Vite output) to `public/`
+- Must use `public/` as the deploy folder for GitLab Pages
+- Copy `dist/` (Vite output) to `public/`
 
 ### Add this job to your existing `.gitlab-ci.yml`:
 
@@ -368,7 +366,7 @@ deploy-prod:
 
 > 🛡️ Set environment variables or secrets in GitLab for:
 
-* `DEPLOY_SSH_KEY`
-* `REMOTE_HOST`, `REMOTE_USER`, etc.
+- `DEPLOY_SSH_KEY`
+- `REMOTE_HOST`, `REMOTE_USER`, etc.
 
 ---

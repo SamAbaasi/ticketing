@@ -45,8 +45,8 @@ function Button({ onClick, label }: ButtonProps) {
 
 ## 🧑‍🏫 Type Inference & Explicitness
 
-* ✅ Prefer `type` over `interface` for consistency unless extending large models
-* ✅ Let TS infer when possible, but annotate public APIs
+- ✅ Prefer `type` over `interface` for consistency unless extending large models
+- ✅ Let TS infer when possible, but annotate public APIs
 
 ```ts
 // Let inference work
@@ -62,9 +62,9 @@ function formatCurrency(value: number): string {
 
 ## 🧪 Props and State
 
-* [ ] Always type props explicitly
-* [ ] Use generics for reusable components
-* [ ] Type state using `useState<Type>()` when it’s not obvious
+- [ ] Always type props explicitly
+- [ ] Use generics for reusable components
+- [ ] Type state using `useState<Type>()` when it’s not obvious
 
 ```tsx
 const [user, setUser] = useState<User | null>(null)
@@ -74,8 +74,8 @@ const [user, setUser] = useState<User | null>(null)
 
 ## 📚 Reusable Types and Enums
 
-* ✅ Create central `types/` folder for shared types
-* ✅ Use enums or union types for predictable values
+- ✅ Create central `types/` folder for shared types
+- ✅ Use enums or union types for predictable values
 
 ```ts
 // Enums or string literal unions
@@ -112,10 +112,10 @@ function useData(): UseDataResult {
 
 ## 🧼 Clean Code Tips
 
-* [ ] Avoid `any` — use `unknown` if needed
-* [ ] Avoid using `as` unless absolutely necessary
-* [ ] Keep types readable — prefer named types over long inline objects
-* [ ] Split large types into smaller ones
+- [ ] Avoid `any` — use `unknown` if needed
+- [ ] Avoid using `as` unless absolutely necessary
+- [ ] Keep types readable — prefer named types over long inline objects
+- [ ] Split large types into smaller ones
 
 ---
 
@@ -139,18 +139,18 @@ In your `tsconfig.json`, enable strict rules:
 
 ## 🧰 Recommended Tools
 
-* 🧪 **ESLint** with `@typescript-eslint`
-* ✅ **Type-check** in CI: `tsc --noEmit`
-* 💡 **VS Code** for excellent TS support
-* ⌨️ **Typesafe forms** with libraries like `react-hook-form`, `zod`, `yup`
+- 🧪 **ESLint** with `@typescript-eslint`
+- ✅ **Type-check** in CI: `tsc --noEmit`
+- 💡 **VS Code** for excellent TS support
+- ⌨️ **Typesafe forms** with libraries like `react-hook-form`, `zod`, `yup`
 
 ---
 
 ## 🧾 Naming Conventions
 
-* ✅ Use `Props`, `Params`, `Config` suffixes for clarity
-* ✅ Capitalize all type and interface names (`User`, `UserProps`)
-* ❌ Avoid single-letter types like `T`, `V`, etc. unless in generics
+- ✅ Use `Props`, `Params`, `Config` suffixes for clarity
+- ✅ Capitalize all type and interface names (`User`, `UserProps`)
+- ❌ Avoid single-letter types like `T`, `V`, etc. unless in generics
 
 ---
 
@@ -167,4 +167,4 @@ In your `tsconfig.json`, enable strict rules:
 
 ---
 
-> *TypeScript isn't about writing more code — it's about writing safer code.*
+> _TypeScript isn't about writing more code — it's about writing safer code._

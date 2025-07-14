@@ -3,8 +3,8 @@
 A comprehensive guide to writing clean, scalable, and type-safe code in your React + TypeScript projects.  
 This guide is based on real-world experience and trusted sources including:
 
-* [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
-* [TypeScript Handbook: Declaration Files Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
+- [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
+- [TypeScript Handbook: Declaration Files Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
 
 ---
 
@@ -24,22 +24,22 @@ Enable strict options for maximum type safety and safe code:
     "skipLibCheck": false
   }
 }
-````
+```
 
 ---
 
 ## 🧱 Project Structure
 
-* Use a clear folder structure:
+- Use a clear folder structure:
   `components/`, `hooks/`, `types/`, `utils/`, `services/`
-* Co-locate type files with components, e.g. `Component.types.ts` or group shared types in a central `/types` folder
-* Use `.tsx` for files that include JSX
+- Co-locate type files with components, e.g. `Component.types.ts` or group shared types in a central `/types` folder
+- Use `.tsx` for files that include JSX
 
 ---
 
 ## 1. 🎯 Use Types and Interfaces Wisely
 
-* Use `interface` for describing object shapes, especially when you want extendability:
+- Use `interface` for describing object shapes, especially when you want extendability:
 
 ```ts
 interface User {
@@ -49,10 +49,10 @@ interface User {
 }
 ```
 
-* Use `type` for unions, intersections, and advanced compositions:
+- Use `type` for unions, intersections, and advanced compositions:
 
 ```ts
-type Status = "active" | "inactive" | "pending"
+type Status = 'active' | 'inactive' | 'pending'
 type APIResponse<T> = { data: T; error?: string }
 ```
 
@@ -64,7 +64,7 @@ type APIResponse<T> = { data: T; error?: string }
 
 ```ts
 function processInput(input: unknown) {
-  if (typeof input === "string") {
+  if (typeof input === 'string') {
     console.log(input.toUpperCase())
   }
 }
@@ -96,8 +96,8 @@ Leverage built-in utility types to simplify and DRY your code:
 
 ```ts
 type OptionalUser = Partial<User>
-type IDOnly = Pick<User, "id">
-type WithoutEmail = Omit<User, "email">
+type IDOnly = Pick<User, 'id'>
+type WithoutEmail = Omit<User, 'email'>
 ```
 
 ---
@@ -119,7 +119,7 @@ function getUser(id: number): User | null {
 Use optional chaining (`?.`) and nullish coalescing (`??`) to avoid runtime errors:
 
 ```ts
-const userName = user?.profile?.name ?? "Guest"
+const userName = user?.profile?.name ?? 'Guest'
 ```
 
 ---
@@ -130,9 +130,9 @@ Use enums or string unions for well-defined sets of values:
 
 ```ts
 enum Role {
-  Admin = "ADMIN",
-  User = "USER",
-  Guest = "GUEST"
+  Admin = 'ADMIN',
+  User = 'USER',
+  Guest = 'GUEST',
 }
 
 function assignRole(role: Role) {
@@ -151,9 +151,9 @@ type Shape = Circle | Square | Triangle
 
 function getArea(shape: Shape): number {
   switch (shape.type) {
-    case "circle":
+    case 'circle':
       return Math.PI * shape.radius ** 2
-    case "square":
+    case 'square':
       return shape.side * shape.side
     default:
       const _exhaustiveCheck: never = shape
@@ -169,8 +169,8 @@ function getArea(shape: Shape): number {
 Use `import type` and `export type` to avoid bundling types in JS output:
 
 ```ts
-import type { User } from "../types"
-export type { Product } from "./product.types"
+import type { User } from '../types'
+export type { Product } from './product.types'
 ```
 
 This helps with tree-shaking and smaller builds.
@@ -179,16 +179,16 @@ This helps with tree-shaking and smaller builds.
 
 ## 10. 🧰 Developer Tools
 
-* **VSCode** — best editor support for TypeScript
-* **ESLint** with `@typescript-eslint` plugin
-* Run `tsc --noEmit` in CI to catch type errors early
-* Use TypeScript Playground: [https://www.typescriptlang.org/play](https://www.typescriptlang.org/play)
+- **VSCode** — best editor support for TypeScript
+- **ESLint** with `@typescript-eslint` plugin
+- Run `tsc --noEmit` in CI to catch type errors early
+- Use TypeScript Playground: [https://www.typescriptlang.org/play](https://www.typescriptlang.org/play)
 
 ---
 
 ## 🔤 Typing React Components
 
-* Prefer explicit prop types over `React.FC` unless you need implicit `children` typing:
+- Prefer explicit prop types over `React.FC` unless you need implicit `children` typing:
 
 ```tsx
 // With children
@@ -215,8 +215,8 @@ function Button({ label, onClick }: ButtonProps) {
 
 ## 🧠 Type Inference vs Explicit Typing
 
-* Let TypeScript infer types inside functions and variables when obvious
-* Always explicitly type inputs and outputs of public APIs
+- Let TypeScript infer types inside functions and variables when obvious
+- Always explicitly type inputs and outputs of public APIs
 
 ```ts
 // Inference
@@ -265,10 +265,10 @@ function useData<T>(): { data: T | null; error: Error | null } {
 
 ## 🧼 Clean Code Practices
 
-* Avoid `any`; prefer `unknown` with proper type narrowing
-* Use descriptive and consistent naming (`UserProps`, `FetchConfig`)
-* Split large complex types into smaller, readable ones
-* Keep union types concise and clear
+- Avoid `any`; prefer `unknown` with proper type narrowing
+- Use descriptive and consistent naming (`UserProps`, `FetchConfig`)
+- Split large complex types into smaller, readable ones
+- Keep union types concise and clear
 
 ---
 
@@ -276,23 +276,23 @@ function useData<T>(): { data: T | null; error: Error | null } {
 
 (from official docs)
 
-* Always export declarations
-* Use `declare module '...'` for global packages
-* Avoid `declare global` unless necessary
-* Avoid `export =` unless dealing with legacy code
+- Always export declarations
+- Use `declare module '...'` for global packages
+- Avoid `declare global` unless necessary
+- Avoid `export =` unless dealing with legacy code
 
 ---
 
 ## 🧾 Other Useful TS Features
 
-* Use `// @ts-ignore` **only as a last resort** with a comment explaining why
+- Use `// @ts-ignore` **only as a last resort** with a comment explaining why
 
 ```ts
 // @ts-ignore: third-party types are incorrect
 someLegacyFunction()
 ```
 
-* Use `typeof`, `keyof`, `ReturnType` for type extraction:
+- Use `typeof`, `keyof`, `ReturnType` for type extraction:
 
 ```ts
 const person = { name: 'Ali', age: 25 }
@@ -304,23 +304,23 @@ function getUser() {
 type User = ReturnType<typeof getUser>
 ```
 
-* Built-in utility types: `Partial<T>`, `Required<T>`, `Pick<T,K>`, `Omit<T,K>`, `Record<K,T>`
+- Built-in utility types: `Partial<T>`, `Required<T>`, `Pick<T,K>`, `Omit<T,K>`, `Record<K,T>`
 
 ---
 
 ## ✍️ Naming Conventions (Google Style Guide)
 
-* Use `PascalCase` for types, interfaces, enums
-* Use `camelCase` for variables, functions, props
-* Use `UPPER_CASE` for constants
-* Avoid prefixing interfaces with `I` (e.g. avoid `IUser`)
+- Use `PascalCase` for types, interfaces, enums
+- Use `camelCase` for variables, functions, props
+- Use `UPPER_CASE` for constants
+- Avoid prefixing interfaces with `I` (e.g. avoid `IUser`)
 
 ---
 
 ## 🔁 Linting & CI
 
-* Use `@typescript-eslint/eslint-plugin` for linting
-* Run `tsc --noEmit` in CI pipelines to catch errors early
+- Use `@typescript-eslint/eslint-plugin` for linting
+- Run `tsc --noEmit` in CI pipelines to catch errors early
 
 ---
 
@@ -345,5 +345,4 @@ type User = ReturnType<typeof getUser>
 
 ---
 
-> *TypeScript isn't just a tool — it's your project’s first line of defense. Write safe, scalable TypeScript, not just working code.*
-
+> _TypeScript isn't just a tool — it's your project’s first line of defense. Write safe, scalable TypeScript, not just working code._

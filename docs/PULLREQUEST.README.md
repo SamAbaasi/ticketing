@@ -6,7 +6,7 @@ Thank you for contributing to this project! Before submitting your pull request,
 
 ## 🔗 Related Resources
 
-- **Design Link**: [Figma Design](https://www.figma.com/file/...)  
+- **Design Link**: [Figma Design](https://www.figma.com/file/...)
 - **Task Link**: [Jira Task](https://jira.company.com/browse/...)
 
 ---
@@ -14,7 +14,9 @@ Thank you for contributing to this project! Before submitting your pull request,
 ## ✅ Pull Request Checks
 
 ### ✅ Functionality Check
+
 Ensure the main features of the task are implemented and tested.
+
 - [ ] Feature works as expected
 - [ ] Edge cases handled
 - [ ] Manual test completed
@@ -23,7 +25,9 @@ Ensure the main features of the task are implemented and tested.
 ---
 
 ### 🎨 Style Check
+
 Ensure consistent design and UI compliance.
+
 - [ ] Matches design on Figma
 - [ ] Responsive and mobile-friendly (if needed)
 - [ ] Correct font, color, spacing, and layout
@@ -32,7 +36,9 @@ Ensure consistent design and UI compliance.
 ---
 
 ### 🧼 Clean Code Check
+
 Follow clean code and project rules:
+
 - [ ] Clear and descriptive variable/function names
 - [ ] No commented-out code or unused imports
 - [ ] Components are small and reusable
@@ -43,7 +49,9 @@ Follow clean code and project rules:
 ---
 
 ### 🔒 Security Check
+
 Check for vulnerable dependencies and unsafe patterns:
+
 - [ ] Libraries checked with [Snyk](https://snyk.io/)
 - [ ] No use of `eval()` or unsafe code
 - [ ] Data validated and sanitized (if applicable)

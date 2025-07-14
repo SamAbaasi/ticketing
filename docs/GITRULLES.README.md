@@ -77,6 +77,7 @@ gitGraph
    checkout main
    commit id: "D"
 ```
+
 ```mathematica
 main:     A---B
                    \
@@ -89,9 +90,9 @@ after merge:
 
 ```
 
-* ✔ Preserves full history  
-* ✔ Best when working collaboratively  
-* ❌ Can clutter commit history  
+- ✔ Preserves full history
+- ✔ Best when working collaboratively
+- ❌ Can clutter commit history
 
 ```bash
 git checkout feature/some-task
@@ -129,9 +130,9 @@ after rebase:
 
 ```
 
-* ✔ Clean, linear history  
-* ✔ Best before merging to `main`  
-* ❌ Rewrites history (avoid on shared branches)  
+- ✔ Clean, linear history
+- ✔ Best before merging to `main`
+- ❌ Rewrites history (avoid on shared branches)
 
 ```bash
 git checkout feature/some-task
@@ -141,9 +142,11 @@ git pull --rebase origin main
 ---
 
 ## 🧠 When to Use
-### Action	Use Case
-* Merge	Multiple devs on the same branch
-* Rebase	Solo feature branches before PR
+
+### Action Use Case
+
+- Merge Multiple devs on the same branch
+- Rebase Solo feature branches before PR
 
 ---
 
@@ -195,28 +198,28 @@ git reset --hard HEAD~1   # discards changes
 
 ### ✅ [GitKraken](https://www.gitkraken.com/)
 
-* Visual Git GUI  
-* Drag-and-drop merge/rebase  
-* Conflict resolution  
-* View PRs, commits, and branches graphically  
+- Visual Git GUI
+- Drag-and-drop merge/rebase
+- Conflict resolution
+- View PRs, commits, and branches graphically
 
 ### ✅ [GitLens for VSCode](https://gitlens.amod.io/)
 
-* Inline blame  
-* File and line history  
-* Code authorship tracking  
+- Inline blame
+- File and line history
+- Code authorship tracking
 
 ---
 
 ## ✅ Best Practices Checklist
 
-* [ ] Use `feature/`, `bugfix/`, `hotfix/`, etc. for branches  
-* [ ] Use Conventional Commits for all messages  
-* [ ] Rebase local feature branches before pushing  
-* [ ] Pull with `--rebase` to keep clean history  
-* [ ] Avoid force pushing to shared branches  
-* [ ] Squash commits before merge if possible  
-* [ ] Always link PRs to design (Figma) and tasks (Jira)  
+- [ ] Use `feature/`, `bugfix/`, `hotfix/`, etc. for branches
+- [ ] Use Conventional Commits for all messages
+- [ ] Rebase local feature branches before pushing
+- [ ] Pull with `--rebase` to keep clean history
+- [ ] Avoid force pushing to shared branches
+- [ ] Squash commits before merge if possible
+- [ ] Always link PRs to design (Figma) and tasks (Jira)
 
 ---
 
