@@ -1,13 +1,4 @@
-Sure! Below is your fully rewritten `README.md` **specifically for GitLab**, replacing all GitHub references with GitLab equivalents:
-
-* ✅ GitLab CI/CD (`.gitlab-ci.yml`) instead of GitHub Actions
-* ✅ GitLab secrets (`CI/CD Variables`) instead of GitHub Secrets
-* ✅ Adjusted language, file structure, and recommendations for GitLab pipelines
-
----
-
-```markdown
-# ⚡ React + TypeScript + Vite Front-End Starter (GitLab Edition)
+# ⚡ Docker and  CI/CD
 
 This is a production-ready React + TypeScript + Vite application with full DevOps integration using Docker and GitLab CI/CD. It follows best practices in build security, linting, testing, and deployment automation.
 
