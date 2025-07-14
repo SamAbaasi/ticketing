@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
     "prettier": "npx prettier . --write",
     "stylelint": "stylelint '**/*.scss'",
-    "prepare": "husky"
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:style": "stylelint \"**/*.{scss,css}\"",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
@@ -43,6 +46,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
