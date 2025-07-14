@@ -1,19 +1,11 @@
-Sure! Below is your fully rewritten `README.md` **specifically for GitLab**, replacing all GitHub references with GitLab equivalents:
-
-- ✅ GitLab CI/CD (`.gitlab-ci.yml`) instead of GitHub Actions
-- ✅ GitLab secrets (`CI/CD Variables`) instead of GitHub Secrets
-- ✅ Adjusted language, file structure, and recommendations for GitLab pipelines
-
----
-
-```markdown
-# ⚡ React + TypeScript + Vite Front-End Starter (GitLab Edition)
+# ⚡ Docker and CI/CD
 
 This is a production-ready React + TypeScript + Vite application with full DevOps integration using Docker and GitLab CI/CD. It follows best practices in build security, linting, testing, and deployment automation.
 
 ---
 
 ## 📁 Project Structure
+
 ```
 
 /src → App source code (TSX, SCSS, assets)
@@ -21,41 +13,41 @@ This is a production-ready React + TypeScript + Vite application with full DevOp
 /docker → Dockerfile and .dockerignore
 .gitlab-ci.yml → GitLab CI/CD pipeline
 
-````
+```
 
 ---
 
 ## 🚀 CI/CD Rules — With GitLab Examples
 
-| Rule                          | Description & Code Example |
-|-------------------------------|-----------------------------|
-| **Lockfile Installs Only**    | Ensures deterministic installs. <br> ✅ GitLab: <br> `npm ci` |
-| **Linters & Formatters**      | Run ESLint, Stylelint, and Prettier checks. <br> `package.json`:<br>```json "lint": "eslint .", "lint:styles": "stylelint '**/*.css'", "format:check": "prettier --check ." ``` |
-| **Unit Tests**                | Run with `jest --coverage`. <br> `"test": "jest --coverage"` |
-| **Build Validation**          | Vite production build must succeed: `"build": "vite build"` |
-| **Audit Dependencies**        | Catch known issues: `npm audit --audit-level=moderate` |
-| **Docker Image Verification** | Build Docker image to validate `Dockerfile`: `docker build -t react-app .` |
-| **Artifacts**                 | Upload coverage or build files using GitLab's artifacts directive |
-| **Fail Fast**                 | Default behavior in GitLab CI |
-| **Use Secrets & Envs**        | Use GitLab CI/CD **Variables** for secrets (e.g. `NODE_AUTH_TOKEN`) |
-| **Branch Protection**         | Enable in GitLab: **Settings → Repository → Protected Branches** |
+| Rule                          | Description & Code Example                                                                                                                                                  |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Lockfile Installs Only**    | Ensures deterministic installs. <br> ✅ GitLab: <br> `npm ci`                                                                                                               |
+| **Linters & Formatters**      | Run ESLint, Stylelint, and Prettier checks. <br> `package.json`:<br>`json "lint": "eslint .", "lint:styles": "stylelint '**/*.css'", "format:check": "prettier --check ." ` |
+| **Unit Tests**                | Run with `jest --coverage`. <br> `"test": "jest --coverage"`                                                                                                                |
+| **Build Validation**          | Vite production build must succeed: `"build": "vite build"`                                                                                                                 |
+| **Audit Dependencies**        | Catch known issues: `npm audit --audit-level=moderate`                                                                                                                      |
+| **Docker Image Verification** | Build Docker image to validate `Dockerfile`: `docker build -t react-app .`                                                                                                  |
+| **Artifacts**                 | Upload coverage or build files using GitLab's artifacts directive                                                                                                           |
+| **Fail Fast**                 | Default behavior in GitLab CI                                                                                                                                               |
+| **Use Secrets & Envs**        | Use GitLab CI/CD **Variables** for secrets (e.g. `NODE_AUTH_TOKEN`)                                                                                                         |
+| **Branch Protection**         | Enable in GitLab: **Settings → Repository → Protected Branches**                                                                                                            |
 
 ---
 
 ## 🐳 Docker Best Practices — With Examples
 
-| Rule                    | Description |
-|-------------------------|-------------|
-| **Multi-stage Builds**  | Keeps images clean and small (see Dockerfile below) |
-| **Use Official Images** | Use trusted images like `node:20-alpine`, `nginx:alpine` |
-| **Non-root User**       | Use `USER appuser` in final image for security |
-| **Environment Variables**| Use `ARG` and `ENV` to inject variables safely |
-| **.dockerignore**       | Keep unnecessary files out of Docker build |
-| **Minimize Layers**     | Combine `RUN` commands to reduce layers |
-| **Pin Versions**        | Lock to specific image versions (e.g., `node:20-alpine`) |
-| **Expose Correct Port** | Use `EXPOSE 80` |
-| **Healthcheck**         | Add `HEALTHCHECK` to verify app status |
-| **CI/CD Caching**       | Structure Dockerfile to reuse cached layers during CI |
+| Rule                      | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| **Multi-stage Builds**    | Keeps images clean and small (see Dockerfile below)      |
+| **Use Official Images**   | Use trusted images like `node:20-alpine`, `nginx:alpine` |
+| **Non-root User**         | Use `USER appuser` in final image for security           |
+| **Environment Variables** | Use `ARG` and `ENV` to inject variables safely           |
+| **.dockerignore**         | Keep unnecessary files out of Docker build               |
+| **Minimize Layers**       | Combine `RUN` commands to reduce layers                  |
+| **Pin Versions**          | Lock to specific image versions (e.g., `node:20-alpine`) |
+| **Expose Correct Port**   | Use `EXPOSE 80`                                          |
+| **Healthcheck**           | Add `HEALTHCHECK` to verify app status                   |
+| **CI/CD Caching**         | Structure Dockerfile to reuse cached layers during CI    |
 
 ---
 
@@ -87,7 +79,7 @@ EXPOSE 80
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
   CMD wget -qO- http://localhost || exit 1
-````
+```
 
 ---
 
