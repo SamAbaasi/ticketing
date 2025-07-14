@@ -64,15 +64,29 @@ git commit -m "docs(readme): update contributing section"
 
 ```mermaid
 gitGraph
-   commit id: "main A"
+   commit id: "A"
    branch feature
-   checkout feature
    commit id: "feat 1"
    commit id: "feat 2"
    checkout main
-   commit id: "main B"
+   commit id: "B"
+   commit id: "C"
    checkout feature
    merge main
+   commit id: "feat 3"
+   checkout main
+   commit id: "D"
+```
+```mathematica
+main:     A---B
+                   \
+feature:            feat 1---feat 2
+
+after merge:
+          A---B---main B
+                   \    /
+                    feat 1---feat 2
+
 ```
 
 * ✔ Preserves full history  
@@ -90,15 +104,29 @@ git merge main
 
 ```mermaid
 gitGraph
-   commit id: "main A"
+   commit id: "A"
    branch feature
-   checkout feature
    commit id: "feat 1"
    commit id: "feat 2"
    checkout main
-   commit id: "main B"
+   commit id: "B"
+   commit id: "C"
    checkout feature
-   rebase main
+   commit id: "feat 1'"
+   commit id: "feat 2'"
+   commit id: "feat 3'"
+   checkout main
+   commit id: "D"
+```
+
+```mathematica
+main:     A---B---C
+                   \
+feature:            D---E
+
+after rebase:
+                    A---B---C---D'---E'
+
 ```
 
 * ✔ Clean, linear history  
@@ -109,6 +137,13 @@ gitGraph
 git checkout feature/some-task
 git pull --rebase origin main
 ```
+
+---
+
+## 🧠 When to Use
+### Action	Use Case
+* Merge	Multiple devs on the same branch
+* Rebase	Solo feature branches before PR
 
 ---
 
