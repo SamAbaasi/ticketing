@@ -1,21 +1,13 @@
-import React from 'react'
-import { createBrowserRouter } from 'react-router'
-
-import { SignInPage } from '@/screens/login'
-import Main from '@/screens/main'
-
+import { authRoutes } from '@/auth/auth-routes'
 import ProtectedRoutes from '@/components/common/protectedRoutes'
-// import NotFoundPage from "screens/notFound";
+import Main from '@/screens/main'
+import { createBrowserRouter } from 'react-router'
 
 export const router = createBrowserRouter([
   {
-    path: 'login',
-    element: <SignInPage />,
+    path: 'auth',
+    children: authRoutes,
   },
-  //   {
-  //     path: "*",
-  //     element: <NotFoundPage />,
-  //   },
   {
     path: '/',
     element: <ProtectedRoutes />,
